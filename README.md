@@ -214,62 +214,6 @@ GET /api/tasks/stats/summary
 - **Vanilla JavaScript** - интерактивность
 - **Fetch API** - HTTP запросы
 
-## Примеры использования
-
-### cURL примеры
-
-**Получить все задачи:**
-```bash
-curl http://localhost:3000/api/tasks
-```
-
-**Создать новую задачу:**
-```bash
-curl -X POST http://localhost:3000/api/tasks \
-  -H "Content-Type: application/json" \
-  -d '{
-    "title": "Новая задача",
-    "day": "Среда",
-    "priority": "высокий"
-  }'
-```
-
-**Обновить задачу:**
-```bash
-curl -X PUT http://localhost:3000/api/tasks/1 \
-  -H "Content-Type: application/json" \
-  -d '{"status": "завершена"}'
-```
-
-**Удалить задачу:**
-```bash
-curl -X DELETE http://localhost:3000/api/tasks/1
-```
-
-### JavaScript примеры
-
-**Получить все задачи:**
-```javascript
-fetch('/api/tasks')
-  .then(res => res.json())
-  .then(data => console.log(data.data));
-```
-
-**Создать задачу:**
-```javascript
-fetch('/api/tasks', {
-  method: 'POST',
-  headers: { 'Content-Type': 'application/json' },
-  body: JSON.stringify({
-    title: 'Моя задача',
-    day: 'Четверг',
-    priority: 'средний'
-  })
-})
-.then(res => res.json())
-.then(data => console.log(data));
-```
-
 ## Middleware
 
 ### Логирование (`loggingMiddleware`)
@@ -289,7 +233,7 @@ fetch('/api/tasks', {
   Время обработки: 12ms (201)
 ```
 
-## Требования контрольной работы
+## Что было выполнено
 
 ### Выполнено:
 - Базовый Express-сервер
@@ -297,11 +241,10 @@ fetch('/api/tasks', {
 - req.params для ID задач
 - req.query для фильтрации по дням
 - express.json() и express.urlencoded()
-- Минимум 4 пользовательских middleware
+- 4 пользовательских middleware
 - express.static() для раздачи статических файлов
 - Модульная архитектура (routes + controllers + models)
 - Полноценное веб-приложение с интерфейсом
-- Структурированный README с примерами
 
 ## Функциональность приложения
 
